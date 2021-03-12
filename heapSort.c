@@ -11,7 +11,6 @@ static void
 constroiHeap (int m, int arr[])
 {
    for (int k = 1; k < m; ++k) {                   
-      // arr[1..k] é um heap
       int child = k+1;
       while (child > 1 && arr[child/2] < arr[child]) {  // 5
          troca (arr[child/2], arr[child]);          // 6
@@ -25,7 +24,6 @@ peneira (int m, int v[]) {
    int f = 2;
    while (f <= m) {
       if (f < m && v[f] < v[f+1]) ++f;
-      // f é o filho mais valioso de f/2
       if (v[f/2] >= v[f]) break;
       troca (v[f/2], v[f]);
       f *= 2;
